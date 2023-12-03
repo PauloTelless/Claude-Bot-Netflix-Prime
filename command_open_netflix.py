@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service 
 import speech_recognition as sr
 import time
-from commands import passar_proximo_episodio, pausar_episodio, pular_abertura, mutar_episodio, desmutar_episodio, despausar_episodio,sair_episodio, email, senha
+from commands import passar_proximo_episodio, pausar_episodio, pular_abertura, pular_resumo, mutar_episodio, desmutar_episodio, despausar_episodio,sair_episodio, email, senha
 
 
 def abrir_netflix_login():
@@ -43,6 +43,9 @@ def abrir_netflix_login():
                         
                     elif texto == 'pular abertura':
                         pular_abertura(navegador=navegador)
+                        
+                    elif texto == 'pular resumo':
+                        pular_resumo(navegador=navegador)
                         
                     elif texto == 'pause':
                         pausar_episodio(navegador=navegador)
