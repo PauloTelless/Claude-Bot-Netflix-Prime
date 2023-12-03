@@ -1,23 +1,26 @@
-from command_open_netflix import abrir_netflix_login
-from command_open_amazon_prime import abrir_amazon_prime
-import speech_recognition as sr
+from flask import Flask, render_template, request
 
+app = Flask(__name__)
 
-while True:
-    rec = sr.Recognizer()
-    with sr.Microphone(2) as mic:
-        rec.adjust_for_ambient_noise(mic)
-        print('Fala permitida')
-        try:
-            audio = rec.listen(mic)   
-            texto = str(rec.recognize_google(audio, language='pt-BR')).lower()    
-        
-            if texto == 'abrir netflix':
-                abrir_netflix_login()
-                
-            elif texto == 'abrir prime':
-                abrir_amazon_prime()
-        
-        except sr.UnknownValueError:
-            print('Bot: Não entendi, fale novamente.')
-    
+@app.route('/', methods=['GET'])
+def get_index():
+    return render_template('index.html')
+
+@app.route('/netflixvoice', methods=['POST'])
+def get_netflix_main():
+    try:
+        with open('main_play.py', 'r') as file:
+            codigo_python = file.read()
+            exec(codigo_python)
+            resultado = "Código executado com sucesso!"
+    except Exception as e:
+        resultado = f"Erro durante a execução do código: {str(e)}"
+
+    # Exibe o resultado no console para fins de depuração
+    print("Resultado da execução:", resultado)
+
+    # Renderiza o template 'test.html'
+    return render_template('netflix_main_bot.html')
+
+if __name__ == '__main__':
+    app.run(debug=True, use_reloader=False)
