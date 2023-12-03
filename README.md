@@ -13,5 +13,9 @@ USUÁRIO FALA / EXECUÇÃO
 * "Próximo episódio" / Reproduz o próximo episódio.
 * "Pular abertura" / Se caso existir uma abertura, é pulada.
 * "Pular resumo" / Se caso existir um resumo de um episódio/capítulo, é pulado.
+* "Tela cheia" / Deixa o episódio/capítulo em tela cheia.
+* "Tela normal / Tira o modo de tela cheia do capítuo/episódio em reprodução.
+* "Avançar" / Avança 10 segundos do episódio/capítulo em reprodução.
+* "Voltar / Volta 10 segundo do episódio/capítulo em reprodução.
 * "Saia" / Sai do episódio em reprodução e vai para a tela inicial.
 * "Sair Netflix/Prime" / Sai da plataforma, encerrando o navegador. 
