@@ -12,15 +12,10 @@ def get_netflix_main():
         with open('main_play.py', 'r') as file:
             codigo_python = file.read()
             exec(codigo_python)
-            resultado = "Código executado com sucesso!"
+            
     except Exception as e:
         resultado = f"Erro durante a execução do código: {str(e)}"
-
-    # Exibe o resultado no console para fins de depuração
-    print("Resultado da execução:", resultado)
-
-    # Renderiza o template 'test.html'
-    return render_template('netflix_main_bot.html')
+        print(resultado)
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False)
