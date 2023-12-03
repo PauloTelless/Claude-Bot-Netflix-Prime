@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.ico') }}" type="image/x-icon">
     <title>Claude Bot</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <form action="http://127.0.0.1:5000/netflixvoice" method="POST">
             <div class="img-logos">
                 <label for="netflix-form">
-                <img src="{{ url_for('static', filename='netflix-logo.png') }}" >
+                <img src="{{ url_for('static', filename='img/netflix-logo.png') }}" >
                 </label>
                 <input type="submit" name="netflix-form" id="netflix-form" style="display: none;">
             </div>
@@ -21,7 +22,7 @@
         <form action="http://127.0.0.1:5000/amazonvoice" method="POST">
             <div class="img-logos">
                 <label for="amazon-form">
-                    <img src="{{ url_for('static', filename='amazon-logo.png') }}">
+                    <img src="{{ url_for('static', filename='img/amazon-logo.png') }}">
                 </label>
                 <input type="submit" name="amazon-form" id="amazon-form" style="display: none;">
         </form>
