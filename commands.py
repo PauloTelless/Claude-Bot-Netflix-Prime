@@ -37,6 +37,7 @@ def pausar_episodio(navegador):
         navegador.find_element(By.CSS_SELECTOR, '[data-uia="watch-video"]').click()
     except (NoSuchElementException, StaleElementReferenceException) as e:
         print(f'Elemento não encontrado. Excessão: {e}')    
+    
             
 def despausar_episodio(navegador):
     try:
@@ -54,6 +55,28 @@ def mutar_episodio(navegador):
         navegador.find_element(By.CLASS_NAME, 'watch-video').click()
         time.sleep(1)
         navegador.find_element(By.CSS_SELECTOR, '[data-name="VolumeHigh"]').click()
+        navegador.find_element(By.CSS_SELECTOR, '[data-name="Play"]').click()
+    except (NoSuchElementException, StaleElementReferenceException) as e:
+        print(f'Elemento não encontrado. Excessão: {e}')
+        
+
+def colocar_tela_cheia(navegador):
+    try:
+        #coloca o episódio em reprodução em tela cheia
+        navegador.find_element(By.CLASS_NAME, 'watch-video').click()
+        navegador.find_element(By.CSS_SELECTOR, '[data-uia="control-fullscreen-enter"]').click()
+        time.sleep(0.5)
+        navegador.find_element(By.CSS_SELECTOR, '[data-name="Play"]').click()
+    except (NoSuchElementException, StaleElementReferenceException) as e:
+        print(f'Elemento não encontrado. Excessão: {e}')
+    
+
+def sair_tela_cheia(navegador):
+    try:
+        #sair do modo tela cheia 
+        navegador.find_element(By.CLASS_NAME, 'watch-video').click()
+        navegador.find_element(By.CSS_SELECTOR, '[data-uia="control-fullscreen-exit"]').click()
+        time.sleep(0.5)
         navegador.find_element(By.CSS_SELECTOR, '[data-name="Play"]').click()
     except (NoSuchElementException, StaleElementReferenceException) as e:
         print(f'Elemento não encontrado. Excessão: {e}')
