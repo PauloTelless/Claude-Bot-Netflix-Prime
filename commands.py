@@ -18,11 +18,11 @@ def passar_proximo_episodio(navegador):
         
 def pular_abertura(navegador):
     try:
-        navegador.find_element(By.CSS_SELECTOR, '[data-uia="watch-video"]').click()
         #pular abertura
+        navegador.find_element(By.CSS_SELECTOR, '[data-uia="watch-video"]').click()
         navegador.find_element(By.CSS_SELECTOR, '[data-uia="player-skip-intro"]').click()
-        navegador.find_element(By.CSS_SELECTOR, '[data-name="Play"]').click()
-        
+        time.sleep(1)
+        navegador.find_element(By.CSS_SELECTOR, '[data-uia="watch-video"]').click()
         
     except (NoSuchElementException, StaleElementReferenceException) as e:
         print(f'Elemento não encontrado. Excessão: {e}')    
@@ -31,7 +31,10 @@ def pular_abertura(navegador):
 def pular_resumo(navegador):
     try:
         #pula resumo do episódio anterior, se houver
+        navegador.find_element(By.CSS_SELECTOR, '[data-uia="watch-video"]').click()
         navegador.find_element(By.CSS_SELECTOR, '[data-uia="player-skip-recap"]').click()
+        time.sleep(1)
+        navegador.find_element(By.CSS_SELECTOR, '[data-uia="watch-video"]').click()
         
     except (NoSuchElementException, StaleElementReferenceException) as e:
         print(f'Elemento não encontrado. Excessão: {e}')
