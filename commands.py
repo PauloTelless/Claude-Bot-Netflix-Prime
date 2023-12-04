@@ -21,6 +21,8 @@ def pular_abertura(navegador):
         navegador.find_element(By.CSS_SELECTOR, '[data-uia="watch-video"]').click()
         #pular abertura
         navegador.find_element(By.CSS_SELECTOR, '[data-uia="player-skip-intro"]').click()
+        navegador.find_element(By.CSS_SELECTOR, '[data-name="Play"]').click()
+        
         
     except (NoSuchElementException, StaleElementReferenceException) as e:
         print(f'Elemento não encontrado. Excessão: {e}')    
