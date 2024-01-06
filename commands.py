@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 import time
-email = 'tellespedro257@gmail.com'
-senha = 'Paulinhogostoso12'
+email = ''
+senha = ''
 
 
 def passar_proximo_episodio(navegador):
